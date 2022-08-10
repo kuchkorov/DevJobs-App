@@ -11,7 +11,7 @@ const JobLists = () => {
 
   const searchTermValue = searchTerm.toLowerCase();
 
-  //   ======== search data by location =====
+  //   ======== lokatsiya orqali qidirish =====
 
   const locationSearchHandler = () => {
     const filteredData = jobs.filter((job) =>
@@ -21,7 +21,7 @@ const JobLists = () => {
     setJobData(filteredData);
   };
 
-  // ======== Filter data by part-time, full-time, freelance etc======
+  // ======== part-time, full-time, freelance bo'yicha qidirish ======
   const filterJobData = (e, type) => {
     const filterValue = e.target.value;
 
