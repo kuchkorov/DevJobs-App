@@ -25,30 +25,30 @@ const JobLists = () => {
   const filterJobData = (e, type) => {
     const filterValue = e.target.value;
 
-    setJobData(
-      jobData?.filter((item) => {
-        if (type === "search") {
-          return item?.contract?.includes(filterValue);
-        } else {
-          return item?.location?.includes(filterValue);
-        }
-      })
-    );
-    // if (filterValue === "full-time") {
-    //   const filteredData = jobs.filter((job) => job.contract === "Full Time");
-    //   setJobData(filteredData);
-    // } else if (filterValue === "part-time") {
-    //   const filteredData = jobs.filter((job) => job.contract === "Part Time");
-    //   setJobData(filteredData);
-    // } else if (filterValue === "freelance") {
-    //   const filteredData = jobs.filter((job) => job.contract === "Freelance");
-    //   setJobData(filteredData);
-    // } else if (filterValue === "contract") {
-    //   const filteredData = jobs.filter((job) => job.contract === "Contract");
-    //   setJobData(filteredData);
-    // } else {
-    //   setJobData(jobs);
-    // }
+    // setJobData(
+    //   jobData?.filter((item) => {
+    //     if (type === "search") {
+    //       return item?.contract?.includes(filterValue);
+    //     } else {
+    //       return item?.location?.includes(filterValue);
+    //     }
+    //   })
+    // );
+    if (filterValue === "full-time") {
+      const filteredData = jobs.filter((job) => job.contract === "Full Time");
+      setJobData(filteredData);
+    } else if (filterValue === "part-time") {
+      const filteredData = jobs.filter((job) => job.contract === "Part Time");
+      setJobData(filteredData);
+    } else if (filterValue === "freelance") {
+      const filteredData = jobs.filter((job) => job.contract === "Freelance");
+      setJobData(filteredData);
+    } else if (filterValue === "contract") {
+      const filteredData = jobs.filter((job) => job.contract === "Contract");
+      setJobData(filteredData);
+    } else {
+      setJobData(jobs);
+    }
   };
 
   return (
@@ -84,7 +84,7 @@ const JobLists = () => {
             </div>
 
             <div className='search__panel-03'>
-              <select onChange={() => filterJobData(e, "search")}>
+              <select onChange={(e) => filterJobData(e, "search")}>
                 <option>Filter job by</option>
                 <option value='full-time'>Full Time</option>
                 <option value='part-time'>Part Time</option>
